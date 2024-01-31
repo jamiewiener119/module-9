@@ -1,0 +1,71 @@
+---
+title: "Module 9 Notes"
+output: html_document
+date: "2024-01-31"
+---
+## 5-number Summary
+
+## Module 9 Exercises
+```{r}
+library(tidyverse)
+f <- "https://raw.githubusercontent.com/difiore/ada-2024-datasets/main/Country-Data-2016.csv"
+d <- read_csv(f, col_names = TRUE)
+names(d)
+attach(d)
+plants
+```
+
+### Challenges
+
+```{r}
+library(tidyverse)
+f <- "https://raw.githubusercontent.com/difiore/ada-2024-datasets/main/Country-Data-2016.csv"
+d <- read.csv(f, header = TRUE, sep = ",", stringsAsFactors = FALSE)
+d <- as_tibble(d)
+```
+```{r}
+head(d)
+```
+```{r}
+names(d)
+```
+```{r}
+summary(d)
+```
+**How many variables?**
+16
+
+**How many observations?**
+248
+```{r}
+c <- length(unique(d$country))
+```
+**How many countries?**
+248
+
+```{r}
+median(d$area, na.rm = TRUE)
+```
+**Median area?**
+69700
+
+```{r}
+median(d$population, na.rm = TRUE)
+```
+**Median population size?**
+4911766
+
+**Create new density variable (population/area) in the data frame**
+```{r}
+d$density <- d$population/d$area
+```
+
+**What are the 10 most dense countries?**
+```{r}
+
+```
+**What are the 10 least dense countries?**
+```{r}
+
+```
+
