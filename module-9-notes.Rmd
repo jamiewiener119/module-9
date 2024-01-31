@@ -62,10 +62,14 @@ d$density <- d$population/d$area
 
 **What are the 10 most dense countries?**
 ```{r}
-
+d <- d |> arrange(desc(density))
+head(d,10)
 ```
 **What are the 10 least dense countries?**
 ```{r}
-
+d <- d |> arrange(desc(density))
+tail(d,10)
 ```
-
+## For Monday: 
+### Read rest of Module 9 and Module 10
+### Be prepared to work through Exercise 3 in class
